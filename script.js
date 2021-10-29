@@ -5,6 +5,12 @@ colorCricles[2] =document.getElementById("green");
 colorCricles[3] =document.getElementById("yellow");
 colorCricles[4] =document.getElementById("cyan");
 colorCricles[5] =document.getElementById("magenta");
+colorCricles[6] =document.getElementById("grey");
+colorCricles[7] =document.getElementById("purple");
+colorCricles[8] =document.getElementById("teal");
+colorCricles[9] =document.getElementById("coral");
+colorCricles[10] =document.getElementById("lighSeaGreen");
+colorCricles[11] =document.getElementById("midnighBlue");
 
 var list=document.getElementById("list");
 list.addEventListener("click", pick);
@@ -34,7 +40,20 @@ function pick(e){
         else if (e.target.id=="magenta"){
             targetColor="magenta"
         }
-        for (var i=0; i<=5; i++){
+        else if (e.target.id=="grey"){
+            targetColor="grey"
+        }
+        else if (e.target.id=="purple"){
+            targetColor="purple"
+        }
+        else if (e.target.id=="teal"){
+            targetColor="teal"
+        }
+        else if (e.target.id=="coral"){
+            targetColor="coral"
+        }
+        
+        for (var i=0; i<=9; i++){
         colorCricles[i].style.height="50px";
         colorCricles[i].style.width="50px";
     }
@@ -55,13 +74,15 @@ function drawOnCanvas(e){
 
 function drawOnCanvas(e){
     if(e.which==1){
-        canvasContext.strokeStyle=targetColor;
-        canvasContext.beginPath();
-        canvasContext.arc(e.offsetX, e.offsetY, 20,0, Math.PI*2);
-        canvasContext.stroke();
-        canvasContext.fill();
         canvasContext.fillStyle=targetColor;
-    
+        canvasContext.beginPath();
+       // canvasContext.arc(e.offsetX, e.offsetY, 20,0, Math.PI*2);
+       // canvasContext.rect(e.offsetX, e.offsetY, 20, 20);
+        canvasContext.fillRect(e.offsetX, e.offsetY, 20,20);
+        canvasContext.stroke();
+        
+        
+        
     }
 }
 
